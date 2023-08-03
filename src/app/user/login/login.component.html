@@ -1,0 +1,61 @@
+<div class="form">
+	<form action="?" #loginForm="ngForm" method="post" (ngSubmit)="login(loginForm)">
+		<div class="form__body">
+			<div class="form__row">
+				<label for="username" class="form__label">email</label>
+				
+				<div class="form__controls">
+					<input 
+						type="text" 
+						class="field" 
+						name="email" 
+						id="email" 
+						value="" 
+						ngModel 
+						required 
+						[appEmail]="appEmailDomains"
+						#emailInput="ngModel" 
+						placeholder="Enter email">
+				</div><!-- /.form__controls -->
+
+                <ng-container *ngIf="emailInput.touched">
+                    <div *ngIf="emailInput.errors?.['required']">email is required</div>
+				</ng-container>
+			</div><!-- /.form__row -->
+
+			<div class="form__row">
+				<label for="password" class="form__label">Password</label>
+				
+				<div class="form__controls">
+					<input 
+                        type="password" 
+                        class="field" 
+                        name="password" 
+                        id="password" 
+                        value="" 
+                        ngModel
+                        #passwordInput="ngModel"
+                        placeholder="Enter password">
+				</div><!-- /.form__controls -->
+
+                <div *ngIf="passwordInput.touched">
+                    <div *ngIf="passwordInput.errors?.['appPassword']">
+                        Invalid password {{ passwordInput.errors?.['appPassword'] }}
+                    </div>
+                </div>
+			</div><!-- /.form__row -->
+
+			<div class="form__row">
+				<label for="confirm-password" class="form__label">Confirm password</label>
+				
+				<div class="form__controls">
+					<input type="password" class="field" name="confirm-password" id="confirm-password" value="" ngModel placeholder="Confirm password">
+				</div><!-- /.form__controls -->
+			</div><!-- /.form__row -->
+		</div><!-- /.form__body -->
+		
+		<div class="form__actions">
+			<input type="submit" value="Submit" class="form__btn">
+		</div><!-- /.form__actions -->
+	</form>
+</div><!-- /.form -->
