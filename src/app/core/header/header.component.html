@@ -1,6 +1,22 @@
-<nav>
-    <ul>
-        <li><a routerLink="/login">Login</a></li>
-        <li><a routerLink="/register">Register</a></li>
-    </ul>
-</nav>
+<header class="header">
+    <div class="header__inner">
+        <a routerLink="/" class="header__logo">Movies</a>
+
+        <nav>
+            <ul>
+                <ng-container *ngIf="!authService.isLoggedIn">
+                    <li><a routerLink="/login">Login</a></li>
+                
+                    <li><a routerLink="/register">Sign up</a></li>
+                </ng-container>
+                
+                <ng-container *ngIf="authService.isLoggedIn">
+                    <li><a routerLink="/profile">Profile</a></li>
+
+                    <li><a (click)="logout()">Logout</a></li>
+                </ng-container>
+            </ul>
+        </nav>
+    </div>
+</header>
+

@@ -2,7 +2,7 @@
 	<form action="?" #loginForm="ngForm" method="post" (ngSubmit)="login(loginForm)">
 		<div class="form__body">
 			<div class="form__row">
-				<label for="username" class="form__label">email</label>
+				<label for="username" class="form__label">Email <span class="form__required">*</span></label>
 				
 				<div class="form__controls">
 					<input 
@@ -19,12 +19,12 @@
 				</div><!-- /.form__controls -->
 
                 <ng-container *ngIf="emailInput.touched">
-                    <div *ngIf="emailInput.errors?.['required']">email is required</div>
+					<div *ngIf="emailInput.errors?.['appEmailValidator']" class="form__valid">Email is not valid</div>
 				</ng-container>
 			</div><!-- /.form__row -->
 
 			<div class="form__row">
-				<label for="password" class="form__label">Password</label>
+				<label for="password" class="form__label">Password <span class="form__required">*</span></label>
 				
 				<div class="form__controls">
 					<input 
@@ -33,29 +33,52 @@
                         name="password" 
                         id="password" 
                         value="" 
-                        ngModel
+						required
+                        [ngModel]="passwordValue"
+						(ngModelChange)="updatePasswordValue($event)"
+						[appPassword]="passwordValue"
                         #passwordInput="ngModel"
                         placeholder="Enter password">
 				</div><!-- /.form__controls -->
 
                 <div *ngIf="passwordInput.touched">
-                    <div *ngIf="passwordInput.errors?.['appPassword']">
-                        Invalid password {{ passwordInput.errors?.['appPassword'] }}
+                    <div *ngIf="passwordInput.errors?.['appPasswordValidator']" class="form__valid">
+                        Invalid password
                     </div>
                 </div>
 			</div><!-- /.form__row -->
 
 			<div class="form__row">
-				<label for="confirm-password" class="form__label">Confirm password</label>
+				<label for="confirm-password" class="form__label">Confirm password <span class="form__required">*</span></label>
 				
 				<div class="form__controls">
-					<input type="password" class="field" name="confirm-password" id="confirm-password" value="" ngModel placeholder="Confirm password">
+					<input 
+						type="password" 
+						class="field" 
+						name="confirm-password" 
+						id="confirm-password" 
+						required
+						value="" 
+						ngModel
+						[appMatchPassword]="passwordValue"
+						#confirmPasswordInput="ngModel"
+						placeholder="Confirm password">
 				</div><!-- /.form__controls -->
+
+				<div *ngIf="confirmPasswordInput.touched">
+                    <div *ngIf="confirmPasswordInput.errors?.['matchPasswordValidator']" class="form__valid">
+                        Password do not match
+                    </div>
+                </div>
 			</div><!-- /.form__row -->
 		</div><!-- /.form__body -->
 		
 		<div class="form__actions">
-			<input type="submit" value="Submit" class="form__btn">
+			<input type="submit" value="Submit" [disabled]=loginForm.invalid class="form__btn">
 		</div><!-- /.form__actions -->
+
+		<div class="form__register">
+			<p>Don't have an account? <a routerLink="/register">Sign up</a></p>
+		</div>
 	</form>
 </div><!-- /.form -->

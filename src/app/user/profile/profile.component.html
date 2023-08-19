@@ -1,0 +1,27 @@
+<div class="profile">
+    <div class="profile__inner">
+        <nav class="profile__nav">
+            <ul>
+                <li>
+                    <a href="">User Profile</a>
+                </li>
+
+                <li>
+                    <a href="">Logout</a>
+                </li>
+            </ul>
+        </nav>    
+
+        <div class="profile__main" *ngIf="authService.userData as user">
+            <div class="profile__head">
+                <h2>User Profile</h2>
+            </div>
+
+            <div class="profile__entry">
+                <p>Hello: {{ user.displayName }}</p>
+
+                <p>Email: {{ user.email }}</p>
+            </div>
+        </div>
+    </div>
+</div>

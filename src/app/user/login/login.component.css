@@ -1,0 +1,74 @@
+.form {
+
+}
+
+.form form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 40px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.5);
+}
+
+.form .form__label {
+    display: block;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.form .form__row {
+    margin-bottom: 25px;
+}
+
+.form .form__controls {
+    display: flex;
+}
+
+.form .form__valid {
+    margin-top: 15px;
+    color: red;
+}
+
+.form .form__required {
+    color: red;
+}
+
+.form .field {
+    display: block;
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid rgba(0,0,0,0.5);
+    padding: 0 15px;
+    outline: 0;
+}
+
+.form .form__btn {
+    display: inline-block;
+    border: 0;
+    background: transparent;
+    outline: 0;
+    background: #f05452;
+    color: #000;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background $t-duration;
+}
+
+.form .form__btn {
+    background: darken(#f05452, .2);
+}
+
+.form .form__btn[disabled] {
+    opacity: 0.7;
+}
+
+.form .form__register {
+    margin-top: 40px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.form .form__register a {
+    color: blue;
+}

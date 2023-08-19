@@ -1,0 +1,33 @@
+.header {
+    padding: 15px;
+    background: #f05452;
+}
+
+.header .header__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.header .header__logo {
+    font-size: 30px;
+    display: block;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #000;
+}
+
+.header nav ul {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+.header nav li a {
+    font-size: 20px;
+    color: #000;
+    text-decoration: none;;
+}
