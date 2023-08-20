@@ -1,0 +1,24 @@
+<a routerLink="/movies" class="movie-back"> < Back to Movies</a>
+
+<div class="movie-details" *ngIf="movie">
+    <div class="movie__image">
+        <img [src]="movie.imageUrl" alt="">
+    </div>
+
+    <div class="movie__head">
+        <h4> {{ movie.title }}</h4>
+    </div>
+
+    <div class="movie__entry">
+        <p> {{ movie.entry }} </p>
+    </div>
+
+    <div class="movie__date">
+        Release Date {{ movie.date }}
+    </div>
+
+    <div class="movie__rating">
+        IMDB Rating {{ movie.rating }}
+    </div>
+</div>
+

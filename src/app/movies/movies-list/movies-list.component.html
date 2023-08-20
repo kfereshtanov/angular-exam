@@ -1,0 +1,25 @@
+<div class="shell">
+    <section class="section-movies">
+        <h2>Movies that you would like</h2>
+
+        <div class="movies">
+            <div class="movies__items">
+                <div class="movies__item" *ngFor="let movie of movies;">
+                    <app-movie [movie]="movie"></app-movie>
+                </div>
+            </div>
+        </div>
+    
+        <ng-container *ngIf="moviesLoaded">
+
+            <div class="section__foot">
+                <h2 *ngIf="authService.isLoggedIn">Here you can add more movies to the list</h2>
+
+                <app-add-movie *ngIf="authService.isLoggedIn"></app-add-movie>
+            </div>
+        </ng-container>
+    </section>
+</div>
+
+
+

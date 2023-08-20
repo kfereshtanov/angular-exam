@@ -1,0 +1,140 @@
+<div class="movie">
+  <a [routerLink]="['/movie', movie.id]" class="movie__image">
+    <img [src]="movie.imageUrl" alt="" />
+  </a>
+
+  <div class="movie__body">
+    <h4 class="movie__title">{{ movie.title }}</h4>
+  </div>
+
+  <div class="movie__footer">
+    <div class="movie__rating">{{ movie.rating }}</div>
+
+    <div class="movie__date">{{ movie.date }}</div>
+  </div>
+
+  <div class="movie__actions" *ngIf="authService.isLoggedIn">
+    <ul>
+      <li>
+        <button type="button" class="button" (click)="openPopup()">
+          Update
+        </button>
+      </li>
+
+      <li>
+        <button type="button" class="button" (click)="deleteMovie(movie.id)">
+          Delete
+        </button>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<ng-container *ngIf="isVisible">
+  <div class="form">
+  
+    
+    <form
+      action="?"
+      #movieForm="ngForm"
+      method="post"
+      (ngSubmit)="updateMovie(movie.id, movieForm)"
+    >
+      <div class="form__body">
+        <div class="form__row">
+          <label for="title" class="form__label">Title</label>
+
+          <div class="form__controls">
+            <input
+              type="text"
+              class="field"
+              name="title"
+              id="title"
+              [ngModel]="movie.title"
+              placeholder="Enter title"
+            />
+          </div>
+          <!-- /.form__controls -->
+        </div>
+        <!-- /.form__row -->
+
+        <div class="form__row">
+          <label for="entry" class="form__label">Description</label>
+
+          <div class="form__controls">
+            <textarea
+              class="textarea"
+              name="entry"
+              id="entry"
+              [ngModel]="movie.entry"
+              placeholder="Enter Description"
+            >
+            </textarea>
+          </div>
+          <!-- /.form__controls -->
+        </div>
+        <!-- /.form__row -->
+
+        <div class="form__row">
+          <label for="imageUrl" class="form__label">Image url</label>
+
+          <div class="form__controls">
+            <input
+              type="text"
+              class="field"
+              name="imageUrl"
+              id="imageUrl"
+              [ngModel]="movie.imageUrl"
+              placeholder="Enter imageUrl"
+            />
+          </div>
+          <!-- /.form__controls -->
+        </div>
+        <!-- /.form__row -->
+
+        <div class="form__row">
+          <label for="rating" class="form__label">Rating</label>
+
+          <div class="form__controls">
+            <input
+              type="text"
+              class="field"
+              name="rating"
+              id="rating"
+              [ngModel]="movie.rating"
+              placeholder="Enter rating"
+            />
+          </div>
+          <!-- /.form__controls -->
+        </div>
+        <!-- /.form__row -->
+
+        <div class="form__row">
+          <label for="date" class="form__label">Date of release</label>
+
+          <div class="form__controls">
+            <input
+              type="text"
+              class="field"
+              name="date"
+              id="date"
+              [ngModel]="movie.date"
+              placeholder="Enter date"
+            />
+          </div>
+          <!-- /.form__controls -->
+        </div>
+        <!-- /.form__row -->
+      </div>
+      <!-- /.form__body -->
+
+      <div class="form__actions">
+        <input type="submit" value="Update" class="form__btn" />
+
+        <button class="form__btn" (click)="closePopup()">Cancel Updates</button>
+      </div>
+      <!-- /.form__actions -->
+    </form>
+  </div>
+  <!-- /.form -->
+</ng-container>

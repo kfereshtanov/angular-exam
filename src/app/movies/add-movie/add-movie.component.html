@@ -1,0 +1,88 @@
+<div class="form">
+	<form action="?" #movieForm="ngForm" method="post" (ngSubmit)="addMovie(movieForm)">
+		<div class="form__body">
+			<div class="form__row">
+				<label for="title" class="form__label">Title</label>
+				
+				<div class="form__controls">
+					<input 
+                        type="text" 
+                        class="field" 
+                        name="title" 
+                        id="title" 
+                        value=""
+                        required
+                        ngModel
+                        placeholder="Enter title">
+				</div><!-- /.form__controls -->
+			</div><!-- /.form__row -->
+
+            <div class="form__row">
+				<label for="entry" class="form__label">Description</label>
+				
+				<div class="form__controls">
+					<textarea 
+                        class="textarea" 
+                        name="entry" 
+                        id="entry" 
+                        required
+                        ngModel
+                        placeholder="Enter Description">
+                    </textarea>
+				</div><!-- /.form__controls -->
+			</div><!-- /.form__row -->
+
+            <div class="form__row">
+				<label for="imageUrl" class="form__label">Image url</label>
+				
+				<div class="form__controls">
+					<input 
+                        type="text" 
+                        class="field" 
+                        name="imageUrl" 
+                        id="imageUrl" 
+                        value="" 
+                        required
+                        ngModel
+                        placeholder="Enter imageUrl">
+				</div><!-- /.form__controls -->
+			</div><!-- /.form__row -->
+
+            <div class="form__row">
+				<label for="rating" class="form__label">Rating</label>
+				
+				<div class="form__controls">
+					<input 
+                        type="text" 
+                        class="field" 
+                        name="rating" 
+                        id="rating" 
+                        value="" 
+                        required
+                        ngModel
+                        placeholder="Enter rating">
+				</div><!-- /.form__controls -->
+			</div><!-- /.form__row -->
+
+            <div class="form__row">
+				<label for="date" class="form__label">Date of release</label>
+				
+				<div class="form__controls">
+					<input 
+                        type="text" 
+                        class="field" 
+                        name="date" 
+                        id="date" 
+                        value="" 
+                        required
+                        ngModel
+                        placeholder="Enter date">
+				</div><!-- /.form__controls -->
+			</div><!-- /.form__row -->
+		</div><!-- /.form__body -->
+		
+		<div class="form__actions">
+			<input type="submit" value="Add New Movie To List" class="form__btn">
+		</div><!-- /.form__actions -->
+	</form>
+</div><!-- /.form -->

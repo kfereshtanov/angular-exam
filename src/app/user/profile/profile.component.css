@@ -1,0 +1,64 @@
+.profile {
+    padding-block: 50px 0;
+}
+
+.profile .profile__inner {
+    display: flex;
+    border: 1px solid #f05452;
+    border-radius: 5px;
+}
+
+.profile .profile__nav {
+    flex: 0 0 20%;
+}
+
+.profile .profile__nav button {
+   margin: 10px;
+}
+
+.profile .profile__nav li a {
+    padding: 10px;
+    border-right: 1px solid #f05452;
+    border-bottom: 1px solid #f05452;
+    border-radius: 5px;
+}
+
+.profile .profile__nav li.is-active a {
+    background: #f05452;
+}
+
+.profile .profile__nav li:last-child {
+    border-bottom: 0;
+}
+
+.profile .profile__nav a {
+    display: block;
+    text-decoration: none;
+    color: #000;
+}
+
+.profile .profile__nav a:hover {
+    text-decoration: underline;
+}
+
+.profile .profile__nav button {
+    display: inline-block;
+    border: 0;
+    background: transparent;
+    outline: 0;
+    background: #f05452;
+    color: #000;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background $t-duration;
+}
+
+.profile .profile__main {
+    padding: 10px;
+    flex: 1;
+}
+
+.profile .profile__main strong {
+    font-weight: 700;
+}
+

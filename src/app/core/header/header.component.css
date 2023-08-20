@@ -1,5 +1,5 @@
 .header {
-    padding: 15px;
+    padding: 15px 0;
     background: #f05452;
 }
 
@@ -29,5 +29,6 @@
 .header nav li a {
     font-size: 20px;
     color: #000;
-    text-decoration: none;;
+    text-decoration: none;
+    cursor: pointer;
 }

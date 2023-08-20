@@ -1,26 +1,24 @@
 <div class="profile">
-    <div class="profile__inner">
-        <nav class="profile__nav">
-            <ul>
-                <li>
-                    <a href="">User Profile</a>
-                </li>
-
-                <li>
-                    <a href="">Logout</a>
-                </li>
-            </ul>
-        </nav>    
-
-        <div class="profile__main" *ngIf="authService.userData as user">
-            <div class="profile__head">
-                <h2>User Profile</h2>
+    <div class="shell">
+        <div class="profile__inner">
+            <div class="profile__nav">
+                <nav>
+                    <ul>
+                        <li class="is-active">
+                            <a href="#">User Profile</a>
+                        </li>
+                    </ul>
+                </nav>    
+    
+                <button type="button">Logout</button>
             </div>
-
-            <div class="profile__entry">
-                <p>Hello: {{ user.displayName }}</p>
-
-                <p>Email: {{ user.email }}</p>
+           
+            <div class="profile__main" *ngIf="authService.userData as user">
+                <div class="profile__entry">
+                    <p>Hello: <strong>{{ user.displayName }}</strong></p>
+    
+                    <p>Email: <strong>{{ user.email }}</strong></p>
+                </div>
             </div>
         </div>
     </div>
