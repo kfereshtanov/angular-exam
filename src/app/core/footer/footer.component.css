@@ -1,0 +1,21 @@
+.footer {
+    padding: 15px 0;
+    background: #f05452;
+}
+
+.footer .footer__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer .footer__logo {
+    font-size: 30px;
+    display: block;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #000;
+}
